@@ -1,0 +1,3 @@
+#!/Users/sarahd/PycharmProjects/dtw_speech_ex1/venv/bin/python
+from numba.pycc import main
+main()
