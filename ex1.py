@@ -38,7 +38,7 @@ def _traceback(D):
             j -= 1
         elif (tb == 1):
             i -= 1
-        else: # (tb == 2):
+        else: #(tb == 2):
             j -= 1
         p.insert(0, i)
         q.insert(0, j)
