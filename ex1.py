@@ -50,7 +50,7 @@ def main():
     #for root, subdirectories, all_files in os.walk(directory_train):
     #for subdirectory in subdirectories:
 
-    all_files = getListOfFiles("train_data")
+    all_files = get_list_of_files("train_data")
     files = [f for f in all_files if f.endswith('.wav')]
     distances = np.zeros((len(files), len(files)))
     label = np.zeros(len(files))
@@ -98,17 +98,17 @@ def knn(distances, label, files):
     #todo add eculidian distance pred and print to file
 
 
-def getListOfFiles(dirName):
-    listOfFile = os.listdir(dirName)
-    allFiles = list()
-    for entry in listOfFile:
-        fullPath = os.path.join(dirName, entry)
-        if os.path.isdir(fullPath):
-            allFiles = allFiles + getListOfFiles(fullPath)
+def get_list_of_files(dir_name):
+    list_of_file = os.listdir(dir_name)
+    all_files = list()
+    for entry in list_of_file:
+        full_path = os.path.join(dir_name, entry)
+        if os.path.isdir(full_path):
+            all_files = all_files + get_list_of_files(full_path)
         else:
-            allFiles.append(fullPath)
+            all_files.append(full_path)
 
-    return allFiles
+    return all_files
 
 if __name__ == '__main__':
     main()
