@@ -96,12 +96,12 @@ def knn(label, files):
     return preds
 
 def normalize(matrix):
-    for i in range(20):
-        avg = np.average(matrix[i])
+    for i in range(32):
+        avg = np.mean(matrix[i])
         matrix[i] = matrix[i] - avg
         std = np.std(matrix[i])
         matrix[i] = np.divide(matrix[i], std)
-    return matrix
+    return matrix.T
 
 def normalize_minmax(data):
     normalized_data = []
